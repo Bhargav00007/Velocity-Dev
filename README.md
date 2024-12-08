@@ -1,3 +1,17 @@
+## Steps:
+
+To run the python flask server:
+```bash
+cd pythonBackend
+python app.py
+```
+
+To run the front end devlopment server:
+```bash
+cd velocity
+npm run dev
+```
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
