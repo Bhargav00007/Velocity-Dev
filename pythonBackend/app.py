@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, send_file
-import moviepy as mo  # Update the import statement to use moviepy.editor
+import moviepy.editor as mo  # Update the import statement to use moviepy.editor
 from flask_cors import CORS  # Import CORS
 
 app = Flask(__name__)
@@ -21,9 +21,9 @@ def merge_video_audio():
         audio.save("uploaded_audio.mp3")
 
         # Process the files
-        video_clip = mo.VideoFileClip("uploaded_video.mp4").subclipped(0, 10)  # Example range
-        audio_clip = mo.AudioFileClip("uploaded_audio.mp3").subclipped(0, 10)  # Ensure this matches the video duration
-        video_with_audio = video_clip.with_audio(audio_clip)
+        video_clip = mo.VideoFileClip("uploaded_video.mp4").subclip(0, 10)  # Example range
+        audio_clip = mo.AudioFileClip("uploaded_audio.mp3").subclip(0, 10)  # Ensure this matches the video duration
+        video_with_audio = video_clip.set_audio(audio_clip)
 
         # Save the output
         output_file = "merged_video.mp4"
